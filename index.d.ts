@@ -3,9 +3,8 @@
 // at https://github.com/DefinitelyTyped/DefinitelyTyped
 
 /// <reference types="webrtc" />
-export = Peer;
 
-declare class Peer {
+export default class Peer {
   prototype: RTCIceServer;
 
   /**
