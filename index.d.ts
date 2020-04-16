@@ -2,6 +2,7 @@
 // Original definitions by Toshiya Nakakura <https://github.com/nakakura>
 // at https://github.com/DefinitelyTyped/DefinitelyTyped
 
+/// <reference types="webrtc" />
 export = Peer;
 
 declare class Peer {
@@ -33,7 +34,11 @@ declare class Peer {
    * @param stream The caller's media stream
    * @param options Metadata associated with the connection, passed in by whoever initiated the connection.
    */
-  call(id: string, stream: MediaStream, options?: Peer.CallOption): Peer.MediaConnection;
+  call(
+    id: string,
+    stream: MediaStream,
+    options?: Peer.CallOption
+  ): Peer.MediaConnection;
   /**
    * Calls the remote peer specified by id and returns a media connection.
    * @param event Event name
@@ -104,7 +109,10 @@ declare class Peer {
    * @param peerId
    * @param connectionId
    */
-  getConnection(peerId: string, connectionId: string): Peer.MediaConnection | Peer.DataConnection | null;
+  getConnection(
+    peerId: string,
+    connectionId: string
+  ): Peer.MediaConnection | Peer.DataConnection | null;
 
   /**
    * Get a list of available peer IDs
@@ -195,7 +203,7 @@ declare namespace Peer {
   }
 
   interface UtilSupportsObj {
-    browser: boolean,
+    browser: boolean;
     webRTC: boolean;
     audioVideo: boolean;
     data: boolean;
